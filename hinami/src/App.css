@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  font-family: Main;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex_col {
+  flex-direction: column;
+}
+
+.items_center {
+  align-items: center;
+} 
+
+.justify_center {
+  justify-content: center;
+}
+.hscreen {
+  height: 100vh;
+}
+
+
+.header_ {
+  color: white
+}
+
+

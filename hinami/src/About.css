@@ -1,0 +1,114 @@
+.container {
+    width: 90vw;
+    max-width: 500px;
+    height: 600px;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+    
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    padding: 15px;
+    background-color: #353535;
+}
+
+.product-title {
+    text-align:center;
+    display:table;
+    width: 11vw;
+    height:210px;
+}
+
+.product-img-div {
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.product-img {
+    max-width:230px;
+    max-height:230px;
+}
+
+.profile {
+    width: 13vw;
+    min-width: 150px;
+    min-height: 211px;
+}
+
+.title {
+    font-size: 1.5em;
+    overflow-wrap: break-word;
+    color: white
+}
+
+.Artist {
+    margin-top: 10px;
+    color: gray;
+    overflow-wrap: break-word;
+}
+
+.main_content {
+    background-color: #424242;
+    height:100%;
+    top: 5px;
+}
+
+
+.about {
+    margin-left: 15px;
+    color: white;
+}
+
+.content_box {
+    margin-top: 9px;
+    font-size: 0.9rem;
+    background-color: #494949;
+    display:inline-block;
+    padding: 9px;
+    border-radius: 1rem;
+}
+
+.female_box {
+    margin-left: 5px;
+    margin-top: 9px;
+    font-size: 0.9rem;
+    background-color: #D81A60;
+    display:inline-block;
+    padding: 9px;
+    border-radius: 1rem;
+}
+
+.male_box {
+    margin-left: 5px;
+    margin-top: 9px;
+    font-size: 0.9rem;
+    background-color: #1976D3;
+    display:inline-block;
+    padding: 9px;
+    border-radius: 1rem;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInMain {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
