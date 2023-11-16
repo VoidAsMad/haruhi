@@ -1,25 +1,24 @@
-import { Suspense, lazy, useState } from 'react';
+import logo from './logo.svg';
 import './App.css';
-import { Routes, Route, Link } from 'react-router-dom'
-import { Cookies } from 'react-cookie';
-
 
 function App() {
-  const Main = lazy( () => import('./Main') )
-  const About = lazy( () => import('./About') )
-  const Read = lazy( () => import('./Read') )
   return (
-    <>
-    <Suspense fallback={<div>로딩중..</div>}>
-      <Routes>
-        <Route path='/' element={<Main/>}/>
-        <Route path="/about/:id" element={<About/>}/>
-        <Route path="/reader" element={<Read/>}/>
-      </Routes>
-    </Suspense>
-    
-    </>
-    
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
