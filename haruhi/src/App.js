@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import { Suspense, lazy } from 'react';
 import './App.css';
+import { Routes, Route, Link } from 'react-router-dom'
 
 function App() {
+  const MainPage = lazy( () => import('./pages/main') )
+  const ReadPage = lazy( () => import('./pages/read') )
+  const FullPage = lazy( () => import('./pages/full'))
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={ <div>로딩중임</div> }>
+      <Routes>
+        <Route path='/' element={<MainPage/>}/>
+        <Route path='/reader' element={<ReadPage/>}/>
+        <Route path='/reader/full' element={<FullPage/>}/>
+      </Routes>
+    </Suspense>
+    
   );
 }
 

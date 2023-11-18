@@ -1,0 +1,114 @@
+
+header {
+    border-bottom: 2px solid #494949;
+    padding: 7px;
+    color: aliceblue;
+    position: fixed;
+    width: 100vw;
+    font-family: ubontu;
+    background-color: #212121;
+}
+
+h1 {
+    margin-top: 4px;
+}
+.searchBox {
+    margin: 7px;
+    margin-right: 20px;
+}
+
+.inputBox {
+    border-color: rgb(213, 213, 213);
+    width: 150px;
+    padding: 7px;
+    height: 13px; 
+    border: 2px solid black; 
+}
+
+.inputBox::-webkit-inner-spin-button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+main {
+    padding-top: 75px;
+}
+
+.contents {
+    width: 95%;
+    max-width: 550px;
+    max-height: 85vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+}
+
+.contents::-webkit-scrollbar {
+    display: none;
+}
+
+.contentBox {
+    background-color: #212121;
+    width: 100%;
+    max-width: 550px;
+    margin-bottom: 10px;
+    color:white;
+}
+
+.profile_img {
+    width: 12vw;
+    min-width: 150px;
+    max-height: 212px;
+    margin: 10px;
+}
+
+h2 {
+    margin-top: 5px;
+}
+
+h3 {
+    margin-top: 5px;
+    color: gray;    
+}
+
+.tags {
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.next_page {
+    margin-top: 10px;
+    color: white;
+    font-family: Main;
+    text-align: right;
+    cursor: pointer;
+}
+
+.previous_page {
+    margin-top: 10px;
+    color: white;
+    font-family: Main;
+    text-align: left;
+    cursor: pointer;
+}
+
+.move_page {
+    margin-top: 10px;
+    color: white;
+    font-family: Main;
+    text-align: center;
+    cursor: pointer;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.number_p {
+    font-family: 'Main';
+    font-family: Main;
+    color: gray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
