@@ -6,11 +6,15 @@ const HostURL = "https://hitomi.la"
 export function TagBox( {tag_data, tag_name}) {
     if (tag_data.female == "1") {
         return (
-            <a href={HostURL + tag_data.url}><div className="female_tag">{TagTrans(tag_data[tag_name])}</div></a>
+            <a href={HostURL + tag_data.url}><div className="female_tag"><b>{TagTrans(tag_data[tag_name])}</b></div></a>
+        )
+    } else if (tag_data.male == "1") {
+        return (
+            <a href={HostURL + tag_data.url}><div className="male_tag"><b>{TagTrans(tag_data[tag_name])}</b></div></a>
         )
     } else {
         return (
-            <a href={HostURL + tag_data.url}><div className="male_tag">{TagTrans(tag_data[tag_name])}</div></a>
+            <a href={HostURL + tag_data.url}><div className="_tag"><b>{TagTrans(tag_data[tag_name])}</b></div></a>
         )
     }
     

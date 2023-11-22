@@ -11,6 +11,8 @@ function MainPage() {
     const [next_text, SetNT] = useState(false);
     const [content_list, SetCL] = useState([]);
 
+    const [InputID, SetII] = useState("");
+
     let page = searchParams.get("page");
     if (page == null) {
         page = 1;
@@ -37,6 +39,15 @@ function MainPage() {
                     className='inputBox' 
                     placeholder='품번을 입력해주세요.'
                     type='number'
+                    value={InputID}
+                    onChange={(e) => {
+                        SetII(e.target.value);
+                    }}
+                    onKeyDown={(e) => {
+                        if (e.key == "Enter") {
+                            window.location.replace("/reader?id=" + String(InputID))
+                        }
+                    }}
                     />
                 </div>
             </header>
@@ -87,13 +98,15 @@ const ContextBox = ({content_list}) => {
     return (
         content_list.map((data) => {
             return (
-                <div className='contentBox' onClick={() => {
-                    movePage('/reader?id=' + String(data.id));
-                }}>
+                <div className='contentBox'>
                     <div className='flex item_center'>
-                        <img className="profile_img" src={ImageProxy(data.files[0])}></img>
+                        <img className="profile_img" src={ImageProxy(data.files[0])} onClick={() => {
+                            movePage('/reader?id=' + String(data.id));
+                        }}></img>
                         <div className='flex flex_col' style={{width: '100%'}}>
-                            <h2>{data.title}</h2>
+                            <h2 onClick={() => {
+                                movePage('/reader?id=' + String(data.id));
+                            }}>{data.title}</h2>
                             {
                                 data.artists?.map((data) => {
                                     return (<h3><a>{data.artist}</a></h3>)
@@ -107,7 +120,7 @@ const ContextBox = ({content_list}) => {
                                 }
                             </div>
                             <hr style={{backgroundColor: 'gray', height: '1px', border: 0, marginTop: '10px', width: '98%'}}></hr>
-                            <CopyToClipboard text={data.id} onCopy={() => {
+                            <CopyToClipboard text={data.id} onCopy={(e) => {
                                 window.alert("복사 완료!");
                             }}><text className='number_p'>{ data.id }</text></CopyToClipboard>
                         </div>

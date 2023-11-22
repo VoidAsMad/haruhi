@@ -31,7 +31,7 @@ function Reader() {
     return (
         <>
         <div>
-            <header className='flex'>
+            <header className='flex header'>
                 <h1 style={{marginLeft: "15px"}}>Haruhi Reader</h1>
                 {
                     !ready ? null : <p className='full_screen' onClick={() => {
